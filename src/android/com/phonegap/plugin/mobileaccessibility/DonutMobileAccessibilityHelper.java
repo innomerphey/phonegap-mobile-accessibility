@@ -187,5 +187,6 @@ public class DonutMobileAccessibilityHelper extends
 
     @Override
     public void disableDisplayZoom() {
+        android.widget.Toast.makeText(mMobileAccessibility.cordova.getActivity().getBaseContext(), "Default Donut disableDisplayZoom", Toast.LENGTH_SHORT).show();
     }
 }
