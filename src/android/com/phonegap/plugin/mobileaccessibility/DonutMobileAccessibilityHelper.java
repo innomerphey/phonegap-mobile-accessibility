@@ -186,6 +186,6 @@ public class DonutMobileAccessibilityHelper extends
     }
 
     @Override
-    public void disableDisplaySize() {
+    public void disableDisplayZoom() {
     }
 }

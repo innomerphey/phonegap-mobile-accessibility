@@ -40,7 +40,7 @@ The `MobileAccessibility` object, exposed by `window.MobileAccessibility`, provi
 - MobileAccessibility.postNotification
 - MobileAccessibility.speak
 - MobileAccessibility.stop
-- MobileAccessibility.disableDisplaySize
+- MobileAccessibility.disableDisplayZoom
 
 --------------------------------------------------------
 #### MobileAccessibility.isScreenReaderRunning(callback)
@@ -714,14 +714,14 @@ Stops speech.
 - iOS
 
 --------------------------------------------------------
-#### MobileAccessibility.disableDisplaySize()
+#### MobileAccessibility.disableDisplayZoom()
 
 Disables display size setting preference.
 
 ##### Usage
 
 ```javascript
-    MobileAccessibility.disableDisplaySize();
+    MobileAccessibility.disableDisplayZoom();
 ```
 ##### Supported Platforms
 

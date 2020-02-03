@@ -315,8 +315,8 @@ MobileAccessibility.prototype.getTextZoom = function(callback) {
     exec(callback, null, "MobileAccessibility", "getTextZoom", []);
 };
 
-MobileAccessibility.prototype.disableDisplaySize = function(callback) {
-    exec(callback, null, "MobileAccessibility", "disableDisplaySize", []);
+MobileAccessibility.prototype.disableDisplayZoom = function(callback) {
+    exec(callback, null, "MobileAccessibility", "disableDisplayZoom", []);
 };
 
 /**
