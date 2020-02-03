@@ -52,7 +52,9 @@ public class MobileAccessibility extends CordovaPlugin {
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mMobileAccessibilityHelper = new OreoMobileAccessibilityHelper();
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mMobileAccessibilityHelper = new KitKatMobileAccessibilityHelper();
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             mMobileAccessibilityHelper = new JellyBeanMobileAccessibilityHelper();

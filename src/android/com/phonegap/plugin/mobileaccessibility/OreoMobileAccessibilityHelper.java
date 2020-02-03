@@ -17,24 +17,35 @@
  * specific language governing permissions and limitations
  * under the License.
  *
-*/
+ */
 
 package com.phonegap.plugin.mobileaccessibility;
 
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.annotation.TargetApi;
+import android.widget.Toast;
+import android.content.res.Configuration;
+import android.view.WindowManager;
+import android.util.DisplayMetrics;
+import android.content.Context;
 
 @TargetApi(26)
 public class OreoMobileAccessibilityHelper extends
-        KitKatMobileAccessibilityHelper {
-    @Override
-    public void disableDisplayZoom() {
-        Configuration configuration = getResources().getConfiguration();
-        configuration.fontScale = (float) 1; //0.85 small size, 1 normal size, 1,15 big etc
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        metrics.scaledDensity = configuration.fontScale * metrics.density;
-        configuration.densityDpi = (int) getResources().getDisplayMetrics().xdpi;
-        getBaseContext().getResources().updateConfiguration(configuration, metrics);
+    KitKatMobileAccessibilityHelper {
+  @Override
+  public void disableDisplayZoom() {
+    try {
+      Context context = this.cordova.getActivity().getBaseContext();
+      Configuration configuration = context.getResources().getConfiguration();
+      configuration.fontScale = (float) 1; //0.85 small size, 1 normal size, 1,15 big etc
+      DisplayMetrics metrics = new DisplayMetrics();
+      context.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+      metrics.scaledDensity = configuration.fontScale * metrics.density;
+      configuration.densityDpi = (int) context.getResources().getDisplayMetrics().xdpi;
+      context.getResources().updateConfiguration(configuration, metrics);
+      Toast.makeText(context, "Display zoom disabled.", Toast.LENGTH_SHORT).show();
+    } catch (Exception e) {
+      Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
     }
+  }
 }

@@ -315,6 +315,10 @@ MobileAccessibility.prototype.getTextZoom = function(callback) {
     exec(callback, null, "MobileAccessibility", "getTextZoom", []);
 };
 
+MobileAccessibility.prototype.disableDisplaySize = function(callback) {
+    exec(callback, null, "MobileAccessibility", "disableDisplaySize", []);
+};
+
 /**
  * Asynchronous call to native MobileAccessibility to set the current text zoom percent value for the WebView.
  * @param {Number} textZoom A percentage value by which text in the WebView should be scaled.
@@ -339,7 +343,7 @@ MobileAccessibility.prototype.usePreferredTextZoom = function(bool) {
         return currentValue;
     }
 
-    if (currentValue != bool) {
+    if (currentValue !== bool) {
         window.localStorage.setItem("MobileAccessibility.usePreferredTextZoom", bool);
     }
 
@@ -388,7 +392,7 @@ MobileAccessibility.prototype.speak = function(string, queueMode, properties) {
     } else {
         exec(null, null, "MobileAccessibility", "postNotification", [MobileAccessibilityNotifications.ANNOUNCEMENT, string]);
     }
-}
+};
 
 /**
  * Stops speech.
@@ -399,7 +403,7 @@ MobileAccessibility.prototype.stop = function() {
     } else {
         exec(null, null, "MobileAccessibility", "postNotification", [MobileAccessibilityNotifications.ANNOUNCEMENT, "\u200b"]);
     }
-}
+};
 
 /**
  * Callback from native MobileAccessibility returning an object which describes the status of MobileAccessibility features.

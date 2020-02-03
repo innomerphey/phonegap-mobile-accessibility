@@ -40,6 +40,7 @@ The `MobileAccessibility` object, exposed by `window.MobileAccessibility`, provi
 - MobileAccessibility.postNotification
 - MobileAccessibility.speak
 - MobileAccessibility.stop
+- MobileAccessibility.disableDisplaySize
 
 --------------------------------------------------------
 #### MobileAccessibility.isScreenReaderRunning(callback)
@@ -711,6 +712,20 @@ Stops speech.
 - Amazon Fire OS
 - Android
 - iOS
+
+--------------------------------------------------------
+#### MobileAccessibility.disableDisplaySize()
+
+Disables display size setting preference.
+
+##### Usage
+
+```javascript
+    MobileAccessibility.disableDisplaySize();
+```
+##### Supported Platforms
+
+- Android
 
 ----------
 ### Events
