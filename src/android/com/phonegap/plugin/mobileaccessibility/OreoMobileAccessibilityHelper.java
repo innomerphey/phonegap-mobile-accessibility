@@ -44,7 +44,7 @@ public class OreoMobileAccessibilityHelper extends
       Configuration configuration = mContext.getResources().getConfiguration();
       configuration.fontScale = (float) 1; //0.85 small size, 1 normal size, 1,15 big etc
       DisplayMetrics metrics = new DisplayMetrics();
-      mContext.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+      ((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(metrics);
       metrics.scaledDensity = configuration.fontScale * metrics.density;
       configuration.densityDpi = (int) mContext.getResources().getDisplayMetrics().xdpi;
       mContext.getResources().updateConfiguration(configuration, metrics);
