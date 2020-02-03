@@ -59,6 +59,7 @@
         <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/IceCreamSandwichMobileAccessibilityHelper.java" target-dir="src/com/phonegap/plugin/mobileaccessibility" />
         <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/JellyBeanMobileAccessibilityHelper.java" target-dir="src/com/phonegap/plugin/mobileaccessibility" />
         <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/KitKatMobileAccessibilityHelper.java" target-dir="src/com/phonegap/plugin/mobileaccessibility" />
+        <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/OreoMobileAccessibilityHelper.java" target-dir="src/com/phonegap/plugin/mobileaccessibility" />
         <asset src="www/android" target="plugins/com.phonegap.plugin.mobile-accessibility/android" />
     </platform>
 
