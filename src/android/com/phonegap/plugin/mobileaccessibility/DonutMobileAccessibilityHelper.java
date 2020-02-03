@@ -29,6 +29,7 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import java.lang.IllegalAccessException;
 import java.lang.reflect.InvocationTargetException;
@@ -187,6 +188,6 @@ public class DonutMobileAccessibilityHelper extends
 
     @Override
     public void disableDisplayZoom() {
-        android.widget.Toast.makeText(mMobileAccessibility.cordova.getActivity().getBaseContext(), "Default Donut disableDisplayZoom", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mMobileAccessibility.cordova.getActivity().getBaseContext(), "Default Donut disableDisplayZoom", Toast.LENGTH_SHORT).show();
     }
 }
