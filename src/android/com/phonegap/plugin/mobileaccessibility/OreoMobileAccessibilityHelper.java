@@ -32,20 +32,25 @@ import android.content.Context;
 @TargetApi(26)
 public class OreoMobileAccessibilityHelper extends
     KitKatMobileAccessibilityHelper {
+  private Context mContext;
+  @Override
+  public void initialize(MobileAccessibility mobileAccessibility) {
+    super.initialize(mobileAccessibility);
+    mContext = mobileAccessibility.cordova.getActivity().getBaseContext();
+  }
   @Override
   public void disableDisplayZoom() {
     try {
-      Context context = this.cordova.getActivity().getBaseContext();
-      Configuration configuration = context.getResources().getConfiguration();
+      Configuration configuration = mContext.getResources().getConfiguration();
       configuration.fontScale = (float) 1; //0.85 small size, 1 normal size, 1,15 big etc
       DisplayMetrics metrics = new DisplayMetrics();
-      context.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+      mContext.getWindowManager().getDefaultDisplay().getMetrics(metrics);
       metrics.scaledDensity = configuration.fontScale * metrics.density;
-      configuration.densityDpi = (int) context.getResources().getDisplayMetrics().xdpi;
-      context.getResources().updateConfiguration(configuration, metrics);
-      Toast.makeText(context, "Display zoom disabled.", Toast.LENGTH_SHORT).show();
+      configuration.densityDpi = (int) mContext.getResources().getDisplayMetrics().xdpi;
+      mContext.getResources().updateConfiguration(configuration, metrics);
+      Toast.makeText(mContext, "Display zoom disabled.", Toast.LENGTH_SHORT).show();
     } catch (Exception e) {
-      Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+      Toast.makeText(mContext, e.toString(), Toast.LENGTH_SHORT).show();
     }
   }
 }
