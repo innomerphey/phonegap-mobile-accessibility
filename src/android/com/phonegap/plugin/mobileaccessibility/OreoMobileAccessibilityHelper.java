@@ -42,13 +42,14 @@ public class OreoMobileAccessibilityHelper extends
   public void disableDisplayZoom() {
     try {
       Configuration configuration = mContext.getResources().getConfiguration();
+      Toast.makeText(mContext, configuration.fontScale, Toast.LENGTH_LONG).show();
       configuration.fontScale = (float) 1; //0.85 small size, 1 normal size, 1,15 big etc
       DisplayMetrics metrics = new DisplayMetrics();
       ((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(metrics);
       metrics.scaledDensity = configuration.fontScale * metrics.density;
       configuration.densityDpi = (int) mContext.getResources().getDisplayMetrics().xdpi;
       mContext.getResources().updateConfiguration(configuration, metrics);
-      Toast.makeText(mContext, String.valueOf(metrics.scaledDensity) +  " | " + String.valueOf(configuration.densityDpi), Toast.LENGTH_LONG).show();
+      //Toast.makeText(mContext, String.valueOf(metrics.scaledDensity) +  " | " + String.valueOf(configuration.densityDpi), Toast.LENGTH_LONG).show();
     } catch (Exception e) {
       Toast.makeText(mContext, "disableDisplayZoom: " + e.toString(), Toast.LENGTH_SHORT).show();
     }

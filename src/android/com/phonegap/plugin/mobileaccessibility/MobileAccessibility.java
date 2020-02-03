@@ -107,11 +107,6 @@ public class MobileAccessibility extends CordovaPlugin {
                 stop();
                 return true;
             } else if (action.equals("disableDisplayZoom")) {
-                /*cordova.getActivity().runOnUiThread(new Runnable() {
-                    public void run() {
-                        mMobileAccessibilityHelper.disableDisplayZoom();
-                    }
-                });*/
                 mMobileAccessibilityHelper.disableDisplayZoom();
                 return true;
             }
