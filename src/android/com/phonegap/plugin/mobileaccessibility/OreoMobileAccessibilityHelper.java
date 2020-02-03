@@ -47,7 +47,7 @@ public class OreoMobileAccessibilityHelper extends
       DisplayMetrics metrics = new DisplayMetrics();
       ((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(metrics);
       metrics.scaledDensity = configuration.fontScale * metrics.density;
-      configuration.densityDpi = (int) mContext.getResources().getDisplayMetrics().xdpi;
+      //configuration.densityDpi = (int) mContext.getResources().getDisplayMetrics().xdpi;
       mContext.getResources().updateConfiguration(configuration, metrics);
       Toast.makeText(mContext, String.valueOf(metrics.scaledDensity) +  " | " + String.valueOf(configuration.densityDpi), Toast.LENGTH_LONG).show();
     } catch (Exception e) {
