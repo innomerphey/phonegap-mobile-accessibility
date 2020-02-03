@@ -48,9 +48,9 @@ public class OreoMobileAccessibilityHelper extends
       metrics.scaledDensity = configuration.fontScale * metrics.density;
       configuration.densityDpi = (int) mContext.getResources().getDisplayMetrics().xdpi;
       mContext.getResources().updateConfiguration(configuration, metrics);
-      Toast.makeText(mContext, "Display zoom disabled.", Toast.LENGTH_SHORT).show();
+      Toast.makeText(mContext, metrics.scaledDensity.toString() +  " | " + configuration.densityDpi.toString(), Toast.LENGTH_LONG).show();
     } catch (Exception e) {
-      Toast.makeText(mContext, e.toString(), Toast.LENGTH_SHORT).show();
+      Toast.makeText(mContext, "disableDisplayZoom: " e.toString(), Toast.LENGTH_SHORT).show();
     }
   }
 }

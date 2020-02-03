@@ -188,6 +188,6 @@ public class DonutMobileAccessibilityHelper extends
 
     @Override
     public void disableDisplayZoom() {
-        Toast.makeText(mMobileAccessibility.cordova.getActivity().getBaseContext(), "Default Donut disableDisplayZoom", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(mMobileAccessibility.cordova.getActivity().getBaseContext(), "Default Donut disableDisplayZoom", Toast.LENGTH_SHORT).show();
     }
 }
