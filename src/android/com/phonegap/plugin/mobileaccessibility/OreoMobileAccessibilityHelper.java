@@ -50,7 +50,7 @@ public class OreoMobileAccessibilityHelper extends
       mContext.getResources().updateConfiguration(configuration, metrics);
       Toast.makeText(mContext, metrics.scaledDensity.toString() +  " | " + configuration.densityDpi.toString(), Toast.LENGTH_LONG).show();
     } catch (Exception e) {
-      Toast.makeText(mContext, "disableDisplayZoom: " e.toString(), Toast.LENGTH_SHORT).show();
+      Toast.makeText(mContext, "disableDisplayZoom: " + e.toString(), Toast.LENGTH_SHORT).show();
     }
   }
 }
