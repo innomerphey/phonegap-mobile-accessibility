@@ -184,4 +184,8 @@ public class DonutMobileAccessibilityHelper extends
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void disableDisplaySize() {
+    }
 }
