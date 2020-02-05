@@ -30,10 +30,12 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
+import android.content.res.Configuration;
 
 import java.lang.IllegalAccessException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
 
 @TargetApi(Build.VERSION_CODES.DONUT)
 public class DonutMobileAccessibilityHelper extends
