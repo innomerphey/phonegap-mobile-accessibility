@@ -106,8 +106,8 @@ public class MobileAccessibility extends CordovaPlugin {
             } else if (action.equals("stop")) {
                 stop();
                 return true;
-            } else if (action.equals("disableDisplayZoom")) {
-                mMobileAccessibilityHelper.disableDisplayZoom();
+            } else if (action.equals("setFontScaleToOne")) {
+                mMobileAccessibilityHelper.setFontScaleToOne();
                 return true;
             }
         } catch (JSONException e) {

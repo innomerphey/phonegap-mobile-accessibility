@@ -315,8 +315,8 @@ MobileAccessibility.prototype.getTextZoom = function(callback) {
     exec(callback, null, "MobileAccessibility", "getTextZoom", []);
 };
 
-MobileAccessibility.prototype.disableDisplayZoom = function(callback) {
-    exec(callback, null, "MobileAccessibility", "disableDisplayZoom", []);
+MobileAccessibility.prototype.setFontScaleToOne = function(callback) {
+    exec(callback, null, "MobileAccessibility", "setFontScaleToOne", []);
 };
 
 /**
@@ -363,6 +363,7 @@ MobileAccessibility.prototype.usePreferredTextZoom = function(bool) {
         mobileAccessibility.updateTextZoom();
     } else {
         mobileAccessibility.setTextZoom(100);
+        mobileAccessibility.setFontScaleToOne();
     }
 
     return Boolean(bool);

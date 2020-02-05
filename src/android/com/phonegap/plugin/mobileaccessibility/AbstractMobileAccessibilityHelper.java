@@ -38,5 +38,5 @@ abstract class AbstractMobileAccessibilityHelper {
     public abstract void announceForAccessibility(CharSequence text);
     public abstract double getTextZoom();
     public abstract void setTextZoom(double textZoom);
-    public abstract void disableDisplayZoom();
+    public abstract void setFontScaleToOne();
 }
