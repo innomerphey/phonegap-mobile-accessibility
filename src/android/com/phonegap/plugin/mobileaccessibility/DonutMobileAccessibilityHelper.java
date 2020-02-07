@@ -193,6 +193,5 @@ public class DonutMobileAccessibilityHelper extends
         Configuration config = mMobileAccessibility.cordova.getActivity().getResources().getConfiguration();
         config.fontScale = 1;
         mMobileAccessibility.cordova.getActivity().getResources().updateConfiguration(config, mMobileAccessibility.cordova.getActivity().getResources().getDisplayMetrics());
-        // 1.0.7
     }
 }
