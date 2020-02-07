@@ -190,11 +190,8 @@ public class DonutMobileAccessibilityHelper extends
 
     @Override
     public void setFontScaleToOne() {
-        //String fontScale = "";
         Configuration config = mMobileAccessibility.cordova.getActivity().getResources().getConfiguration();
         config.fontScale = 1;
         mMobileAccessibility.cordova.getActivity().getResources().updateConfiguration(config, mMobileAccessibility.cordova.getActivity().getResources().getDisplayMetrics());
-        //fontScale = String.valueOf(mMobileAccessibility.cordova.getActivity().getResources().getConfiguration().fontScale);
-        //Toast.makeText(mMobileAccessibility.cordova.getActivity().getBaseContext(), fontScale, Toast.LENGTH_SHORT).show();
     }
 }
