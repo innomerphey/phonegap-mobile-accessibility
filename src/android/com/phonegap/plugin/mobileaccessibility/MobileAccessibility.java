@@ -137,21 +137,18 @@ public class MobileAccessibility extends CordovaPlugin {
             stop();
             cordova.getActivity().runOnUiThread(new Runnable() {
                 public void run() {
-                    WebView view;
-                    try {
-                        view = (WebView) webView;
+                    if (webView instanceof  WebView) {
+                        WebView view = (WebView) webView;
                         view.reload();
-                    } catch(ClassCastException ce) {  // cordova-android 4.0+
-                        try {   // cordova-android 4.0+
+                    }
+                    else {
+                        try {
                             Method getView = webView.getClass().getMethod("getView");
-                            Method reload = getView.invoke(webView).getClass().getMethod("reload");
-                            reload.invoke(webView);
-                        } catch (NoSuchMethodException e) {
-                            e.printStackTrace();
-                        } catch (InvocationTargetException e) {
-                            e.printStackTrace();
-                        } catch (IllegalAccessException e) {
-                            e.printStackTrace();
+                            Object view = getView.invoke(webView);
+                            Method reload = view.getClass().getMethod("reload");
+                            reload.invoke(view);
+                        } catch (NoSuchMethodException|InvocationTargetException|IllegalAccessException e) {
+                            Log.e("mobile_accessibility", "Error invoking reflected reload method", e);
                         }
                     }
                 }
