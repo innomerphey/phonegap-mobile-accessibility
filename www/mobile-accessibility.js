@@ -363,7 +363,9 @@ MobileAccessibility.prototype.usePreferredTextZoom = function(bool) {
         mobileAccessibility.updateTextZoom();
     } else {
         mobileAccessibility.setTextZoom(100);
-        mobileAccessibility.setFontScaleToOne();
+        if (device.platform.toLowerCase() === "android") {
+            mobileAccessibility.setFontScaleToOne();
+        }
     }
 
     return Boolean(bool);
